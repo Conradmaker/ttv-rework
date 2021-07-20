@@ -7,6 +7,7 @@ type LoadingModalProps = {
 };
 export default function LoadingModal({ onClose }: LoadingModalProps): JSX.Element {
   const [percent, setPercent] = useState(0);
+
   useEffect(() => {
     let oldValue = 0;
     const interval = setInterval(() => {

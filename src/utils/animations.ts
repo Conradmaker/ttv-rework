@@ -47,3 +47,18 @@ export const breath = keyframes`
         transform:scale(1.1) rotate(-1deg)
     }
 `;
+
+export const flying = keyframes`
+    0%{
+        opacity: 0;
+        transform: translate(-10%, 100%)
+    }
+    30%{
+        opacity: 0;
+        transform:scale(.8) translate(-10%, 100%)
+    }
+    100%{
+        opacity: 1;
+        transform:scale(1.1) translate(-10%, -50%)
+    }
+`;

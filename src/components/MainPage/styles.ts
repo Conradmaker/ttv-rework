@@ -1,3 +1,4 @@
+import { flying } from 'src/utils/animations';
 import styled, { css } from 'styled-components';
 
 export const BannerContainer = styled.section`
@@ -32,9 +33,9 @@ export const BannerContainer = styled.section`
         border-radius: 0.5rem;
         position: absolute;
         top: 50%;
-        transform: translate(-10%, -50%);
         width: 22rem;
         box-shadow: 4px 4px 8px #666;
+        animation: ${flying} 1.7s ease-in-out forwards;
       }
     }
   }

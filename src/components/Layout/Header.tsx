@@ -4,7 +4,7 @@ import DropDown from '../Input/DropDown';
 import Logo from './Logo';
 import { HeaderContainer } from './styles';
 import _LoginModal from '../Modal/LoginModal';
-import useModal from '../../hooks/useModal';
+import { useModal } from '../../hooks';
 
 export default function Header(): JSX.Element {
   const [LoginModal, toggleModal] = useModal(_LoginModal);

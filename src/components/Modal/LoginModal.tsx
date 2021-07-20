@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useInput } from '../../hooks';
 import SquareBtn from '../Button/SquareBtn';
 import CommonInput from '../Input/CommonInput';
 import ModalWrapper from './ModalWrapper';
@@ -9,8 +9,8 @@ type LoginModalProps = {
   onClose: () => void;
 };
 export default function LoginModal({ onClose }: LoginModalProps): JSX.Element {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, onChangeEmail] = useInput('');
+  const [password, onChangePassword] = useInput('');
 
   const onClickBackGroung = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) onClose();
@@ -20,15 +20,10 @@ export default function LoginModal({ onClose }: LoginModalProps): JSX.Element {
     <ModalWrapper onClick={onClickBackGroung}>
       <LoginModalBox>
         <h2>Log in to TTV</h2>
-        <CommonInput
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-          label="Email"
-          type="email"
-        />
+        <CommonInput value={email} onChange={onChangeEmail} label="Email" type="email" />
         <CommonInput
           value={password}
-          onChange={e => setPassword(e.target.value)}
+          onChange={onChangePassword}
           label="Password"
           type="password"
         />

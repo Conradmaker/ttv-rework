@@ -2,7 +2,7 @@ import React from 'react';
 import Logo from './Logo';
 import { FooterContainer } from './styles';
 import _TermModal from '../Modal/TermModal';
-import useModal from 'src/hooks/useModal';
+import { useModal } from 'src/hooks';
 
 export default function Footer(): JSX.Element {
   const [TermModal, toggleTermModal] = useModal(_TermModal);

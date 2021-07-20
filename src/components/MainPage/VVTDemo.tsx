@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import useModal from 'src/hooks/useModal';
+import { useModal } from 'src/hooks';
 import SquareBtn from '../Button/SquareBtn';
 import _LoadingModal from '../Modal/LoadingModal';
 import { VVTDemoContainer } from './styles';
