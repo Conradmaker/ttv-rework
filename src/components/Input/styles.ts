@@ -16,7 +16,7 @@ export const DropDownContainer = styled.div`
     opacity: 0;
     transition: all 0.3s;
     border: 1px solid #eee;
-    background-color: #fff;
+    background-color: ${({ theme }) => theme.background.initial};
     li > a {
       display: block;
       white-space: nowrap;
@@ -52,10 +52,10 @@ export const CommonInputBox = styled.fieldset`
     &:hover,
     &:focus {
       border: 3px solid #ccc;
-      background-color: #fff;
+      background-color: ${({ theme }) => theme.background.initial};
     }
     &:invalid {
-      border: 3px solid #c62828;
+      border: 3px solid ${({ theme }) => theme.textColor.alert};
     }
   }
 `;

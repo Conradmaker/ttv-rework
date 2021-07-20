@@ -27,7 +27,11 @@ export const BannerContainer = styled.section`
         width: 28.125rem;
         height: 28.125rem;
         border-radius: 62% 38% 50% 50% / 40% 58% 42% 60%;
-        background: linear-gradient(210deg, #8c30f5, #f1e4ff);
+        background: linear-gradient(
+          210deg,
+          ${({ theme }) => theme.primary.normal},
+          ${({ theme }) => theme.primary.lighter}
+        );
       }
       & > img {
         border-radius: 0.5rem;
@@ -86,9 +90,9 @@ export const ProgressStepBox = styled.li`
     top: -1rem;
     width: 2rem;
     height: 2rem;
-    background-color: #fff;
+    background-color: ${({ theme }) => theme.background.initial};
     border-radius: 50%;
-    background-color: #f1e4ff;
+    background-color: ${({ theme }) => theme.primary.lighter};
   }
   &::after {
     top: 0;
@@ -109,16 +113,16 @@ export const VVTDemoContainer = styled.form<{ textError: string }>`
     h2 {
       font-size: 32px;
       font-weight: bold;
-      color: #fff;
+      color: ${({ theme }) => theme.textColor.contrast};
     }
     p {
-      color: #fff;
+      color: ${({ theme }) => theme.textColor.contrast};
       width: 100%;
       margin: 1rem 0;
       display: flex;
       justify-content: space-between;
       span:last-of-type {
-        color: #000;
+        color: ${({ theme }) => theme.textColor.initial};
       }
     }
     textarea {
@@ -134,7 +138,7 @@ export const VVTDemoContainer = styled.form<{ textError: string }>`
       transition: all 0.3s ease-in-out;
       background-color: rgba(255, 255, 255, 0.95);
       &:focus {
-        border: 2px solid #8c30f5;
+        border: 2px solid ${({ theme }) => theme.primary.normal};
       }
       &::placeholder {
         text-align: center;
@@ -145,7 +149,7 @@ export const VVTDemoContainer = styled.form<{ textError: string }>`
       margin: 0.5rem 0;
       height: 1rem;
       align-self: center;
-      color: #c62828;
+      color: ${({ theme }) => theme.textColor.alert};
     }
     & > button {
       align-self: center;
@@ -177,7 +181,7 @@ export const VVTDemoContainer = styled.form<{ textError: string }>`
     css`
       .inner {
         textarea {
-          border: 2px solid #c62828 !important;
+          border: 2px solid ${({ theme }) => theme.textColor.alert} !important;
         }
       }
     `}

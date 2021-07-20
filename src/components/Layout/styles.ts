@@ -30,7 +30,7 @@ export const LogoBox = styled.div<{ height?: number; light?: boolean }>`
     light &&
     css`
       span {
-        color: #fff;
+        color: ${({ theme }) => theme.textColor.contrast};
       }
     `}
 `;
@@ -42,7 +42,7 @@ export const HeaderContainer = styled.header`
   left: 0;
   height: 4.2rem;
   width: 100vw;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.background.initial};
   .inner {
     height: 100%;
     display: flex;
@@ -75,8 +75,8 @@ export const FooterContainer = styled.footer`
   height: 7.5rem;
   width: 100vw;
   font-size: 14px;
-  background-color: #8c30f5;
-  color: #fff;
+  background-color: ${({ theme }) => theme.primary.normal};
+  color: ${({ theme }) => theme.textColor.contrast};
   .inner {
     height: 100%;
     display: flex;
@@ -96,7 +96,7 @@ export const FooterContainer = styled.footer`
         margin-bottom: 1rem;
       }
       li > a {
-        color: #fff;
+        color: ${({ theme }) => theme.textColor.contrast};
         font-weight: bold;
         text-decoration: underline;
       }

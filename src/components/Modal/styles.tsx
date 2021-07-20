@@ -20,7 +20,7 @@ const ModalBox = styled.div`
   border-radius: 0.6rem;
   box-shadow: 0 0.2rem 0.6rem #888;
   min-width: 20rem;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.background.initial};
   animation: ${slideUp} 0.3s ease-in-out;
   position: relative;
   h2 {
