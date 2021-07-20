@@ -11,11 +11,12 @@ type SquareBtnProps = {
 };
 export default function SquareBtn({
   children,
+  onClick,
   color = 'primary',
   ...rest
 }: SquareBtnProps): JSX.Element {
   return (
-    <SquareBtnBox color={color} {...rest}>
+    <SquareBtnBox onClick={onClick} color={color} {...rest}>
       {children}
     </SquareBtnBox>
   );

@@ -36,6 +36,7 @@ export const LogoBox = styled.div<{ height?: number; light?: boolean }>`
 `;
 
 export const HeaderContainer = styled.header`
+  z-index: 200;
   position: fixed;
   top: 0;
   left: 0;

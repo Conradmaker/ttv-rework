@@ -22,6 +22,7 @@ export const SquareBtnBox = styled.button<{
     color: #8c30f5;
     background-color: #fff;
   }
+
   ${({ width }) =>
     width &&
     css`
@@ -39,4 +40,9 @@ export const SquareBtnBox = styled.button<{
       background-color: #f1e4ff;
       color: #8c30f5;
     `}
+  &:disabled {
+    cursor: no-drop;
+    border: 2px solid #aaa;
+    background-color: #aaa;
+  }
 `;

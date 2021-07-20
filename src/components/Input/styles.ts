@@ -33,3 +33,29 @@ export const DropDownContainer = styled.div`
     }
   }
 `;
+
+export const CommonInputBox = styled.fieldset`
+  width: 100%;
+  label {
+    font-weight: bold;
+    display: block;
+  }
+  input {
+    width: 100%;
+    font-size: 16px;
+    padding: 0.3rem 0.5rem;
+    border: 3px solid #eee;
+    border-radius: 5px;
+    background-color: #eee;
+    outline: none;
+    transition: all 0.3s;
+    &:hover,
+    &:focus {
+      border: 3px solid #ccc;
+      background-color: #fff;
+    }
+    &:invalid {
+      border: 3px solid #c62828;
+    }
+  }
+`;
