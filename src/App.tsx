@@ -1,12 +1,17 @@
 import React from 'react';
 import { Global } from './utils/globalStyle';
 import PageLayout from './components/Layout/PageLayout';
+import Banner from './components/MainPage/Banner';
+import ProgressInfo from './components/MainPage/ProgressInfo';
 
 function App(): JSX.Element {
   return (
     <>
       <Global />
-      <PageLayout>본문</PageLayout>
+      <PageLayout>
+        <Banner />
+        <ProgressInfo />
+      </PageLayout>
     </>
   );
 }
