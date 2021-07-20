@@ -43,6 +43,38 @@ export const BannerContainer = styled.section`
       }
     }
   }
+
+  @media ${({ theme }) => theme.viewPortSize.mobile} {
+    overflow: hidden;
+    .inner {
+      padding: 0rem 1rem;
+      flex-direction: column;
+      justify-content: space-evenly;
+      article {
+        h1 {
+          font-size: 44px;
+        }
+        p {
+          margin: 1.5rem 0;
+          font-size: 14px;
+        }
+      }
+      .banner__right {
+        .circle {
+          position: absolute;
+          top: -4rem;
+          z-index: 0;
+        }
+        & > img {
+          z-index: 1;
+          position: relative;
+          top: 0%;
+          width: 100%;
+          animation: none;
+        }
+      }
+    }
+  }
 `;
 
 export const ProgressInfoContainer = styled.section`
@@ -66,6 +98,33 @@ export const ProgressInfoContainer = styled.section`
     }
     img {
       height: 100%;
+    }
+  }
+  @media ${({ theme }) => theme.viewPortSize.mobile} {
+    height: auto;
+    .inner {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 2rem 2rem;
+      article {
+        z-index: 1;
+        h2 {
+          font-size: 24px;
+          text-align: center;
+        }
+        & > ul {
+          display: flex;
+          flex-direction: column;
+          margin-top: 1rem;
+        }
+      }
+      img {
+        z-index: 0;
+        position: absolute;
+        height: 40%;
+        bottom: 0;
+        right: 0;
+      }
     }
   }
 `;
@@ -99,6 +158,22 @@ export const ProgressStepBox = styled.li`
     right: 0;
     width: 8rem;
     border-top: 1px dashed #999;
+  }
+
+  @media ${({ theme }) => theme.viewPortSize.mobile} {
+    margin-right: 0rem;
+    &::after {
+      top: auto;
+      bottom: -1rem;
+      right: auto;
+      left: 0;
+    }
+    &::before {
+      top: 1.7rem;
+    }
+    h4 {
+      text-indent: 3rem;
+    }
   }
 `;
 
@@ -185,4 +260,29 @@ export const VVTDemoContainer = styled.form<{ textError: string }>`
         }
       }
     `}
+
+  @media ${({ theme }) => theme.viewPortSize.mobile} {
+    .inner {
+      padding: 4rem 1rem;
+      p {
+        margin: 1rem 0 0.3rem 0;
+        flex-direction: column;
+        span:last-of-type {
+          margin-top: 0.3rem;
+          align-self: flex-end;
+          font-weight: bold;
+          color: ${({ theme }) => theme.textColor.contrast};
+        }
+      }
+      textarea {
+        &::placeholder {
+          text-align: center;
+          font-size: 1rem;
+        }
+      }
+      .circle {
+        top: -1rem;
+      }
+    }
+  }
 `;

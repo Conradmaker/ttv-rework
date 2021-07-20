@@ -5,12 +5,16 @@ import Logo from './Logo';
 import { HeaderContainer } from './styles';
 import _LoginModal from '../Modal/LoginModal';
 import { useModal } from '../../hooks';
+import { RiArrowDownSLine } from 'react-icons/ri';
+import { useState } from 'react';
 
 export default function Header(): JSX.Element {
   const [LoginModal, toggleModal] = useModal(_LoginModal);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const toggleMobileMenu = () => setMobileMenuOpen(prev => !prev);
   return (
     <>
-      <HeaderContainer>
+      <HeaderContainer mobileMenuOpen={mobileMenuOpen}>
         <div className="inner">
           <div className="header__left">
             <Logo />
@@ -31,6 +35,7 @@ export default function Header(): JSX.Element {
             </SquareBtn>
             <SquareBtn>DashBoard(Beta)</SquareBtn>
           </div>
+          <RiArrowDownSLine className="menu__mobile" onClick={toggleMobileMenu} />
         </div>
       </HeaderContainer>
       <LoginModal />

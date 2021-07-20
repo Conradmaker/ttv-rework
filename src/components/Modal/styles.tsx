@@ -13,6 +13,9 @@ export const ModalWrappertContainer = styled.div`
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.3);
   animation: ${fadeIn} 0.3s ease-in-out;
+  @media ${({ theme }) => theme.viewPortSize.mobile} {
+    align-items: flex-end;
+  }
 `;
 
 const ModalBox = styled.div`
@@ -21,12 +24,18 @@ const ModalBox = styled.div`
   box-shadow: 0 0.2rem 0.6rem #888;
   min-width: 20rem;
   background-color: ${({ theme }) => theme.background.initial};
-  animation: ${slideUp} 0.3s ease-in-out;
+  animation: ${slideUp} 0.5s ease-in-out;
   position: relative;
   h2 {
     font-size: 24px;
     font-weight: 800;
     margin-bottom: 1.5rem;
+  }
+  @media ${({ theme }) => theme.viewPortSize.mobile} {
+    align-items: flex-end;
+    border-bottom-left-radius: 0rem;
+    border-bottom-right-radius: 0rem;
+    min-height: 70vh;
   }
 `;
 
@@ -43,6 +52,9 @@ export const LoginModalBox = styled(ModalBox)`
     button + button {
       margin-left: 0.7rem;
     }
+  }
+  @media ${({ theme }) => theme.viewPortSize.mobile} {
+    width: 100vw;
   }
 `;
 
@@ -63,6 +75,9 @@ export const TermModalBox = styled(ModalBox)`
       }
     }
   }
+  @media ${({ theme }) => theme.viewPortSize.mobile} {
+    width: 100vw;
+  }
 `;
 
 export const LoadingModalBox = styled(ModalBox)`
@@ -81,5 +96,8 @@ export const LoadingModalBox = styled(ModalBox)`
     text-align: center;
     transform: translateX(-50%);
     animation: ${breath} 0.7s ease-in-out alternate infinite;
+  }
+  @media ${({ theme }) => theme.viewPortSize.mobile} {
+    width: 100vw;
   }
 `;

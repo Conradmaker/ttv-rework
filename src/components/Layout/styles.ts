@@ -2,6 +2,11 @@ import styled, { css } from 'styled-components';
 
 export const PageLayoutContainer = styled.main`
   padding-bottom: 7.5rem;
+  @media ${({ theme }) => theme.viewPortSize.mobile} {
+    padding-bottom: 14rem;
+    width: 100vw;
+    overflow-x: hidden;
+  }
 `;
 
 export const LogoBox = styled.div<{ height?: number; light?: boolean }>`
@@ -35,7 +40,7 @@ export const LogoBox = styled.div<{ height?: number; light?: boolean }>`
     `}
 `;
 
-export const HeaderContainer = styled.header`
+export const HeaderContainer = styled.header<{ mobileMenuOpen: boolean }>`
   z-index: 200;
   position: fixed;
   top: 0;
@@ -56,7 +61,9 @@ export const HeaderContainer = styled.header`
         margin-left: 2rem;
         display: flex;
         align-items: center;
-        gap: 20px;
+        & > li + li {
+          margin-left: 20px;
+        }
       }
     }
     .header__right {
@@ -65,6 +72,72 @@ export const HeaderContainer = styled.header`
         margin-left: 1rem;
       }
     }
+    .menu__mobile {
+      display: none;
+      font-size: 32px;
+    }
+  }
+
+  @media ${({ theme }) => theme.viewPortSize.mobile} {
+    width: 100vw;
+    overflow: hidden;
+    transition: all 0.3s;
+    .inner {
+      padding: 0.9rem 1rem;
+      align-items: flex-start;
+      .header__left {
+        flex-direction: column;
+        & > ul {
+          display: none;
+          position: absolute;
+          top: 4.5rem;
+          left: 0;
+          justify-content: space-evenly;
+          width: 100%;
+          margin-left: 0;
+          font-size: 18px;
+          z-index: 1;
+          li + li {
+            margin-left: 0px;
+            & > div > p {
+              padding: 0 0.6rem;
+            }
+          }
+        }
+      }
+      .header__right {
+        flex-direction: column;
+        display: none;
+        position: absolute;
+        top: 7rem;
+        left: 0;
+        width: 100%;
+        padding: 0 1rem;
+        button + button {
+          margin: 1rem 0 0 0;
+        }
+      }
+      .menu__mobile {
+        display: initial;
+        transition: all 0.3s;
+      }
+    }
+    ${({ mobileMenuOpen }) =>
+      mobileMenuOpen &&
+      css`
+        height: 14rem;
+        .inner {
+          .header__left > ul {
+            display: flex;
+          }
+          .header__right {
+            display: initial;
+          }
+          .menu__mobile {
+            transform: rotate(180deg);
+          }
+        }
+      `}
   }
 `;
 
@@ -99,6 +172,20 @@ export const FooterContainer = styled.footer`
         color: ${({ theme }) => theme.textColor.contrast};
         font-weight: bold;
         text-decoration: underline;
+      }
+    }
+  }
+
+  @media ${({ theme }) => theme.viewPortSize.mobile} {
+    height: 14rem;
+    .inner {
+      flex-direction: column;
+      justify-content: center;
+      & > .footer__left {
+        text-align: center;
+      }
+      & > .footer__right {
+        text-align: center;
       }
     }
   }
