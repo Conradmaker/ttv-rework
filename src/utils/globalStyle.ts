@@ -5,7 +5,11 @@ export const Global = createGlobalStyle`
         box-sizing: border-box;
         font-family: 'Manrope', sans-serif;
     }
+    html{
+        scroll-behavior: smooth;
+    }
     body{
+        overflow:hidden scroll;
         position:relative;
         min-height: 100vh;
     }
