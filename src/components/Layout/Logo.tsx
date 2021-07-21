@@ -15,7 +15,7 @@ export default function Logo({ light, ...rest }: LogoProps): JSX.Element {
       <img
         src={
           light
-            ? 'http://picasso.waynehills.co/images/logos/wayne-hills-logo-white.png'
+            ? 'https://i.ibb.co/KV2mDXc/wayne-hills-logo-white.png'
             : 'https://i.ibb.co/BznGdg0/1-5-removebg-preview.png'
         }
         alt="logo"
