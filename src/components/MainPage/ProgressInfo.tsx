@@ -1,4 +1,5 @@
 import React from 'react';
+import GIF from '../../assets/image/process.gif';
 import { ProgressInfoContainer, ProgressStepBox } from './styles';
 
 const progressInfo = [
@@ -32,10 +33,7 @@ export default function ProgressInfo(): JSX.Element {
             ))}
           </ul>
         </article>
-        <img
-          src="https://i.ibb.co/Qc5KXjR/f590939311c0794df4233167b7c88ddf.gif"
-          alt="animation_gif"
-        />
+        <img src={GIF} alt="animation_gif" />
       </div>
     </ProgressInfoContainer>
   );

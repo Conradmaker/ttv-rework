@@ -29,7 +29,7 @@ const theme: ThemeType = {
   primary: {
     normal: '#8c30f5',
     lighter: '#f1e4ff',
-    sub: 'string',
+    sub: '#eebd83',
   },
   background: {
     initial: '#fff',

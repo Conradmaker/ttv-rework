@@ -78,7 +78,7 @@ export const BannerContainer = styled.section`
 `;
 
 export const ProgressInfoContainer = styled.section`
-  background-color: #f6bf80;
+  background-color: #eebd83;
   height: 20rem;
   .inner {
     height: 100%;
